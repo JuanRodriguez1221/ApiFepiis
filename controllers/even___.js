@@ -6,5 +6,5 @@ eventosGet = (req, res = response) => {
 }
 
 module.exports = {
-    usuariosGet
+    eventosGet
 }

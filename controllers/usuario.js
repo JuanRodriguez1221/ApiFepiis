@@ -28,7 +28,7 @@ const usuariosPost = async (req, res = response) => {
     const body = req.body;
     let msg = '';
     const usuario = new Usuario(body);
-    const { nombre, documento, password, rol, estado } = req.body;
+    const { nombre, documento, password, rol} = req.body;
     try {
 
         const salt = bcrypt.genSaltSync(10);
@@ -55,7 +55,7 @@ const usuariosPost = async (req, res = response) => {
 const usuariosPut = async (req, res = response) => {
     const body = req.query;
     console.log(body);
-    const { nombre, documento, password, rol, estado } = req.body;
+    const { nombre, documento, password, rol} = req.body;
     const usuario = await Usuario.findOneAndUpdate({ documento: documento }, {
         nombre:
             nombre, rol: rol
@@ -69,7 +69,7 @@ const usuariosPut = async (req, res = response) => {
 const usuariosDelete = async (req, res = response) => {
     const body = req.query;
     console.log(body);
-    const { nombre, documento, password, rol, estado } = req.query;
+    const { nombre, documento, password, rol} = req.query;
 
     const usuario = await Usuario.findOneAndDelete({ documento: documento });
     res.json({

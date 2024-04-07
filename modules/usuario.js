@@ -18,11 +18,6 @@ const UsuarioSchema = Schema({
         type: String,
         required: true,
         enum: ['Admin', 'Practicante', 'Cliente', 'Colaborador']
-    },
-    estado: {
-        type: Boolean,
-        default: true,
-        required: [true, 'El estado es obligatorio']
-    },
+    }
 })
 module.exports = model('Usuario', UsuarioSchema);

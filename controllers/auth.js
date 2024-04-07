@@ -17,11 +17,6 @@ const login = async (req, res) => {
             })
         }
 
-        if (!usuario.estado) {
-            return res.status(400).json({
-                msg: 'Usuario inactivo'
-            })
-        }
         resultado = await comparePassword(password, usuario.password)
 
         if (resultado == true) {
