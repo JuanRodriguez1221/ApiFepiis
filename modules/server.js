@@ -8,9 +8,7 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
 
-        this.eventosPath = '/api/eventos';
-        this.usuariosPath = '/api/usuarios';
-        this.authPath = '/api/auth';
+        this.alquilerPath = '/api/alquileres';
         this.middlewares();
         this.routes();
         this.connectDb();
@@ -28,10 +26,7 @@ class Server {
         this.app.use(express.static(__dirname + "/public"));
     }
     routes() {
-
-        this.app.use(this.eventosPath, require('../routes/eventos'));
-        this.app.use(this.usuariosPath, require('../routes/usuarios'));
-        this.app.use(this.authPath, require('../routes/auth'));
+        this.app.use(this.alquilerPath, require('../routes/alquileres'));
     }
     async connectDb() {
         await dbConnection();
