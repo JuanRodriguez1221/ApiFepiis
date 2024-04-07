@@ -1,4 +1,5 @@
 const { response } = require('express')
+
 usuariosGet = (req, res = response) => {
     res.json({
         msg: 'GET API'

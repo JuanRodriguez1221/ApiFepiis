@@ -5,6 +5,4 @@ const { eventosGet, PromGet } =
 
 router.get('/', eventosGet);
 
-router.get('/promedio', PromGet);
-
 module.exports = router;

@@ -12,7 +12,7 @@ const UsuarioSchema = Schema({
         type: String,
         required: [true, 'El password es obligatorio'],
         minlength: 3,
-        maxlength: [60, 'El password debe ser de máximo 7 y se obtuvo: { VALUE }'],
+        maxlength: [100, 'El password debe ser de máximo 7 y se obtuvo: { VALUE }'],
     },
     rol: {
         type: String,

@@ -13,7 +13,7 @@ const login = async (req, res) => {
     try {
         if (!usuario) {
             return res.status(400).json({
-                msg: 'Correo electrónico no encontrado'
+                msg: 'Documento no encontrado'
             })
         }
 

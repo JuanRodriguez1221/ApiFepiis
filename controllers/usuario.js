@@ -1,11 +1,13 @@
 const { response } = require('express');
 const bcrypt = require('bcryptjs');
 const Usuario = require('../modules/usuario');
+
 const usuariosGet = async (req, res = response) => {
     const body = req.query;
     const { q, nombre, page = 1, limit } = req.query;
     const usuarios = await Usuario.find();
     res.json({
+        usuarios
     });
 }
 
@@ -28,7 +30,7 @@ const usuariosPost = async (req, res = response) => {
     const body = req.body;
     let msg = '';
     const usuario = new Usuario(body);
-    const { nombre, documento, password, rol} = req.body;
+    const {nombre, documento, password, rol} = req.body;
     try {
 
         const salt = bcrypt.genSaltSync(10);
@@ -57,8 +59,7 @@ const usuariosPut = async (req, res = response) => {
     console.log(body);
     const { nombre, documento, password, rol} = req.body;
     const usuario = await Usuario.findOneAndUpdate({ documento: documento }, {
-        nombre:
-            nombre, rol: rol
+        nombre: nombre, rol: rol
     });
     res.json({
         msg: 'Usuario Modificado',

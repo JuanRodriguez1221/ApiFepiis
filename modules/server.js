@@ -2,6 +2,7 @@ const express = require('express');
 const { dbConnection } = require('../database/config');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
 class Server {
     constructor() {
         this.app = express();
